@@ -3,8 +3,8 @@ import warnings
 
 import numpy as np
 
-from ..base import _alpha_grid, _net_alpha_grid, _pre_fit
-from .. import cd_fast
+from base import _alpha_grid, _net_alpha_grid, _pre_fit
+# from model import cd_fast
 
 
 def multinomial_path(X, m, l12_ratio=0.5, eps=1e-3, n_alphas=100, alphas=None,
@@ -83,7 +83,7 @@ def multinomial_path(X, m, l12_ratio=0.5, eps=1e-3, n_alphas=100, alphas=None,
         The number of iterations taken by the coordinate descent optimizer to
         reach the specified tolerance for each alpha.
     """
-    if verbose: print 'Entering multinomial net path'
+    if verbose: print('Entering multinomial net path')
     X = np.array(X, dtype=np.float64, order='F', copy=copy_X)
     n_samples, n_features = X.shape
 
@@ -228,7 +228,7 @@ def multinomial_net_path(X, m, k=5, l12_ratio=0.5, eps=1e-3, n_alphas=100, alpha
         The number of iterations taken by the coordinate descent optimizer to
         reach the specified tolerance for each alpha.
     """
-    if verbose: print 'Entering multinomial factorized net path'
+    if verbose: print('Entering multinomial factorized net path')
     X = np.array(X, dtype=np.float64, order='F', copy=copy_X)
     n_samples, n_features = X.shape
 
@@ -479,7 +479,7 @@ def poisson_net_path(X, k=5, l1_ratio=0.5, eps=1e-3, n_alphas=100, alphas=None,
         The number of iterations taken by the descent optimizer to
         reach the specified tolerance for each alpha.
     """
-    if verbose: print 'Entering Poisson factorized net path'
+    if verbose: print('Entering Poisson factorized net path')
     X = np.array(X, dtype=np.float64, order='F', copy=copy_X)
     n_samples, n_features = X.shape
 

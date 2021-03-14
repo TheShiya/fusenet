@@ -10,10 +10,10 @@ def get_random_poisson(A, n=200, lambd_true=1.0, lambd_noise=0.5):
     sz_tmp = n*p1
     Y = np.random.poisson(lambd_true, sz_tmp).reshape((n, p1))
     E = np.random.poisson(lambd_noise, n*p).reshape((n, p))
-    vec_triA = np.zeros((p*(p - 1)/2, 1))
+    vec_triA = np.zeros((int(p*(p - 1)/2), 1))
     k = 0
-    for j in xrange(A.shape[0]):
-        for i in xrange(0, j):
+    for j in range(A.shape[0]):
+        for i in range(0, j):
             vec_triA[k, 0] = A[i, j]
             k += 1
     B1 = np.eye(p)
@@ -38,4 +38,4 @@ data = get_random_poisson(true_dependency_matrix, n=n_examples)
 clf = glm.PoissonFNet(alpha=0.01, l1_ratio=0, verbose=False, max_iter=2)
 cls = clf.fit(data, k=3)
 dependency_matrix = cls.D_
-print dependency_matrix
+print(dependency_matrix)

@@ -3,7 +3,7 @@ import warnings
 import numpy as np
 
 import path
-from ..base import LinearModel
+from base import LinearModel
 
 
 class PoissonENet(LinearModel):

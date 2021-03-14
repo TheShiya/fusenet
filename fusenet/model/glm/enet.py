@@ -2,7 +2,7 @@ import warnings
 
 import numpy as np
 
-from ..base import LinearModel, _pre_fit
+from base import LinearModel, _pre_fit
 import path
 
 
